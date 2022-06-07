@@ -1,6 +1,7 @@
 //DECLARAMOS VARIABLES QUE SE OCUPARÁN ola de saludo 
 
 /// Comentario de version
+//prueba de ola
 
 int motor; //Declaramos la variable motores del tipo entero
 int sensor; //Declaramos la variable sensor del tipo entero
