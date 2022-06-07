@@ -3,6 +3,7 @@
 /// Comentario de version
 //prueba de ola
 
+
 int motor; //Declaramos la variable motores del tipo entero
 int sensor; //Declaramos la variable sensor del tipo entero
 int i; //Declaramos la variable i del tipo entero
@@ -24,56 +25,6 @@ void setup()
 }
 
 //DEFINIMOS FUNCIONES DE NUESTROS MOTORES
-
-// //Funcion correspondiente al motor 1
-// void Motor1(int i, int potencia)
-//   {
-//     analogWrite(11,potencia); //Se habilita el motor 1 
-//     switch (i)
-//     {
-//       case 0:  //Hace un giro a la derecha
-//       digitalWrite(13, 0); //Combinacion IN1=0, IN2=1  
-//       digitalWrite(12, 1); //Para que el motor gire en sentido opuesto a las manecillas del reloj
-//       break;
-      
-//       case 1: //Hace un giro a la izquierda
-//       digitalWrite(13, 1); //Combinacion IN1=1, IN2=0   
-//       digitalWrite(12, 0); //Para que el motor gire en sentido a las manecillas del reloj
-//       break;
-
-//       case 2: //Quieto
-//       digitalWrite(13, LOW); //Combinacion IN1=1, IN2=0   
-//       digitalWrite(12, LOW); //Para que el motor gire en sentido a las manecillas del reloj
-//       break;
-      
-//       return i;
-//     }
-//   }
-  
-// //Funcion correspondiente al motor 2
-// void Motor2(int i, int potencia)
-//   {
-//     analogWrite(5,potencia); //Se habilita el motor 2
-//     switch (i)
-//     {
-//       case 0: //Hace un giro a la derecha
-//       digitalWrite(7, 1); //Combinacion IN3=1, IN4=0   
-//       digitalWrite(6, 0); //Para que el motor gire en sentido a las manecillas del reloj
-//       break;
-
-//       case 1: //Hace un giro a la Izquierda
-//       digitalWrite(7, 0); //Combinacion IN3=0, IN4=1  
-//       digitalWrite(6, 1); //Para que el motor gire en sentido opuesto a las manecillas del reloj
-//       break;
-
-//       case 2: //Quieto
-//       digitalWrite(7, LOW); //Combinacion IN1=1, IN2=0   
-//       digitalWrite(6, LOW); //Para que el motor gire en sentido a las manecillas del reloj
-//       break;
-      
-//       return i;
-//     }
-//   }
 
 // Definimos la funciones de nuestrs motorores
  void Motor1(int i, int potencia)
