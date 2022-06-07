@@ -98,7 +98,6 @@ void loop() {
   }else if((s1==1) && (s2==0) && (s3==0)){
     derecha();
     memoria='3';
-    
   }
   else if ((s1==0) && (s2==1) && (s3==1)){
     izquierda();
