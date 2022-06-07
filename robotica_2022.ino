@@ -53,13 +53,13 @@ void atras(){
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: DERECHA
 void derecha(){
     Motor1(i=0, potencia = 255);
-    Motor2(i=0, potencia = 100);
+    Motor2(i=0, potencia = 70);
     // Imprimimos potencia del motor resultante
   Serial.println("Potencia del motor: 255");
   }
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: IZQUIERDA
 void izquierda(){
-    Motor1(i=0, potencia = 100);
+    Motor1(i=0, potencia = 70);
     Motor2(i=0, potencia = 255);
     Serial.println("Potencia del motor: 255");
   }
@@ -96,7 +96,7 @@ void loop() {
   {
     alto();//Llamamos a la funcion 
     memoria='0';//Guardamos los valores en la variable para que asosie al movimieto
-  }else if((s1==1) && (s2==0) && (s3==1))
+  }else if((s1==0) && (s2==1) && (s3==0))
   {
     adelante();//Llamamos a la funcion 
     memoria='1'; //Guardamos los valores en la variable para que asosie al movimieto
