@@ -1,4 +1,4 @@
-//DECLARAMOS VARIABLES QUE SE OCUPARÁN 
+//DECLARAMOS VARIABLES QUE SE OCUPARÁN ola de saludo 
 
 int motor; //Declaramos la variable motores del tipo entero
 int sensor; //Declaramos la variable sensor del tipo entero
