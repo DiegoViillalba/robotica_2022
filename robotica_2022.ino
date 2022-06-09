@@ -16,7 +16,8 @@ bool sentido = 0;
 int s1_r = 0; //Declaramos la variable s1 para la lectura de valores 
 int s2_r = 0; //Declaramos la variable s2 para la lectura de valores
 int s3_r = 0; //Declaramos la variable s3 para la lectura de valores
-
+int c=0;
+int j=0;
 /*-------------------------DECLARAMOS ASPECTOS DEL CÓDIGO-------------------------*/
 void setup() 
 {
@@ -40,7 +41,7 @@ int funcionp(int s1, int s2, int s3)
   float k; //Declaramos variables para nuestras funciones 
   p = (s1+s3)/2; 
   d = (s2-p);
-  k = d*.30;
+  k = d*0.30;
   v = s2 - k;
   return v;
 }
@@ -72,28 +73,35 @@ void atras(){
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: DERECHA
 void derecha(){
     Motor1(i=0, potencia = 0);
-    Motor2(i=0, potencia = 255);
+    Motor2(i=0, potencia = 200);
   }
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: IZQUIERDA
 void izquierda(){
-    Motor1(i=0, potencia = 255);
+    Motor1(i=0, potencia = 200);
     Motor2(i=0, potencia = 0);
   }
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: DETENIDO
 void alto(){
-    Motor1(i=2, potencia = 255);
-    Motor2(i=2, potencia = 255);
+    Motor1(i=2, potencia = 230);
+    Motor2(i=2, potencia = 230);
   }
 //DECLARAMOS INSTRUCCIONES DEL CÓDIGO
 void loop() {
   button = digitalRead(A6);
-  float v;
+  int v;
+  
+  
 
       //ASIGNAMOS VALORES A NUESTRAS VARIABLES
     s2_r = analogRead(A3); //Asignamos a la variable s2 la lectura del sensor reflexivo conectado al pin A3
-    s3_r = analogRead(A2); //Asignamos a la variable s3 la lectura del sensor reflexivo conectado al pin A2
+    s3_r = analogRead(A2)-20; //Asignamos a la variable s3 la lectura del sensor reflexivo conectado al pin A2
     s1_r = analogRead(A4); //Asignamos a la variable s1 la lectura del sensor reflexivo conectado al pin A4
 
+    if (c==0){
+      v = funcionp(s1_r,s2_r,s3_r);
+      c ==1;
+    }
+    
     /*
                                     REGISTRO DE LECTURA DE LOS SENSORES
                                         1=Blanco       0=Negro
@@ -141,17 +149,38 @@ void loop() {
 
     if( (s1==0) && (s2==0) && (s3==0))
     {
-      if(memoria == '2'){
-        izquierda();//Llamamos a la funcion 
+      if(memoria == '3'){
+        if(j==0){
+          izquierda();//Llamamos a la funcion 
         Serial.println("izquierda");//Espacio
-        memoria='2';//Guardamos los valores en la variable para que asosie al movimieto
-      }
-          
-      else if(memoria == '3'){
+        memoria='3';//Guardamos los valores en la variable para que asosie al movimieto
+        j=1;
+          }
+          else{
         derecha();//Llamamos a la funcion 
         Serial.println("derecha");//Espacio
-        memoria='3';//Guardamos los valores en la variable para que asosie al movimieto
+        memoria='2';//Guardamos los valores en la variable para que asosie al movimieto
+        j=0;
       }
+          
+        
+      }
+          
+      else if(memoria == '2'){
+        if(j==0){
+        derecha();//Llamamos a la funcion 
+        Serial.println("derecha");//Espacio
+        memoria='2';//Guardamos los valores en la variable para que asosie al movimieto
+        j=1;
+      }
+      else {
+          izquierda();//Llamamos a la funcion 
+        Serial.println("izquierda");//Espacio
+        memoria='3';//Guardamos los valores en la variable para que asosie al movimieto
+        j=0;
+          }
+      }
+      
     }else if( (s1==0) && (s2==1) && (s3==0))
     {
       adelante();//Llamamos a la funcion 
@@ -163,6 +192,17 @@ void loop() {
       Serial.println("izquierda");//Espacio
       memoria='2';//Guardamos los valores en la variable para que asosie al movimieto
     }else if( (s1==0) && (s2==0) && (s3==1))
+    {
+      derecha();//Llamamos a la funcion 
+      Serial.println("derecha");//Espacio
+      memoria='3';//Guardamos los valores en la variable para que asosie al movimieto
+    }
+    else if( (s1==1) && (s2==1) && (s3==0))
+    {
+      izquierda();//Llamamos a la funcion 
+      Serial.println("izquierda");//Espacio
+      memoria='2';//Guardamos los valores en la variable para que asosie al movimieto
+    }else if( (s1==0) && (s2==1) && (s3==1))
     {
       derecha();//Llamamos a la funcion 
       Serial.println("derecha");//Espacio
