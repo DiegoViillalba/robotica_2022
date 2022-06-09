@@ -75,23 +75,16 @@ void derecha(){
     Motor1(i=0, potencia = 0);
     Motor2(i=0, potencia = 255);
   }
-
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: IZQUIERDA
 void izquierda(){
     Motor1(i=0, potencia = 255);
     Motor2(i=0, potencia = 0);
   }
-
 //FUNCION QUE INDICA EL MOVIMIENTO DE LOS MOTORES: DETENIDO
 void alto(){
     Motor1(i=2, potencia = 255);
     Motor2(i=2, potencia = 255);
   }
-
-// Funcion de lectuira de blanco y negro
-
-
-
 //DECLARAMOS INSTRUCCIONES DEL CÓDIGO
 void loop() {
   button = digitalRead(A6);
@@ -101,8 +94,7 @@ void loop() {
     s2_r = analogRead(A3); //Asignamos a la variable s2 la lectura del sensor reflexivo conectado al pin A3
     s3_r = analogRead(A2); //Asignamos a la variable s3 la lectura del sensor reflexivo conectado al pin A2
     s1_r = analogRead(A4); //Asignamos a la variable s1 la lectura del sensor reflexivo conectado al pin A4
-    // d = digitalRead(A1); //Asignamos a la variable s3 la lectura del sensor reflexivo conectado al pin d
-    // l = digitalRead(A5); //Asignamos a la variable s3 la lectura del sensor reflexivo conectado al pin i
+
     /*
                                     REGISTRO DE LECTURA DE LOS SENSORES
                                         1=Blanco       0=Negro
@@ -117,10 +109,8 @@ void loop() {
       Serial.print("                     ");//Espacio
       Serial.println(s3);//Imprimimos valor en pantalla
     */
-  // v = lec(s1_r,s2_r,s3_r);
-  //v = 500;
-
-  if (s1_r <= v)
+  //HACEMOS CASOS PARA GUARDAR VARIABLES 
+  if (s1_r <= v) 
   {
     s1 = 0;
     Serial.println(s1_r);//Espacio
@@ -148,7 +138,7 @@ void loop() {
     s3=1;
   }
 
-    //HACEMOS LOS CASOS PARA EL MOVIMIENTO DE NUESTRO CARRO
+  //HACEMOS LOS CASOS PARA EL MOVIMIENTO DE NUESTRO CARRO
 
     if( (s1==0) && (s2==0) && (s3==0))
     {
