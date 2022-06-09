@@ -1,7 +1,7 @@
 /*
 --------------------------------------------- AUTORES ---------------------------------------------
-                              Hernández Cuevas Jonathan Alexis 
-                               Villalba Gónzalez Diego Antonio
+                                    Hernández Cuevas Jonathan Alexis 
+                                      Villalba Gónzalez Diego Antonio
 */
 
 /*-------------------------DECLARAMOS VARIABLES NECESARIAS PARA EL CÓDIGO-------------------------*/
