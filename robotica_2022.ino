@@ -4,7 +4,7 @@
                                Villalba Gónzalez Diego Antonio
 */
 
-/*-------------------------DECLARAMOS VARIABLES NECESARIAS PARA EL CÓDIGO------------------------- aa*/
+/*-------------------------DECLARAMOS VARIABLES NECESARIAS PARA EL CÓDIGO-------------------------*/
 int i; //Declaramos la variable i del tipo entero para asignar los pines establecidos
 int potencia; //Declaramos la variable potencia del tipo entero para la velocidad de los motores
 char memoria; //Declaramos la variable memoria del tipo entero para el caso donde esta en blanco (Guardar)
@@ -18,7 +18,6 @@ int s2_r = 0; //Declaramos la variable s2 para la lectura de valores
 int s3_r = 0; //Declaramos la variable s3 para la lectura de valores
 
 /*-------------------------DECLARAMOS ASPECTOS DEL CÓDIGO-------------------------*/
-
 void setup() 
 {
   Serial.begin(9600); //Inicializamos comunicación serial
@@ -109,6 +108,7 @@ void loop() {
       Serial.print("                     ");//Espacio
       Serial.println(s3);//Imprimimos valor en pantalla
     */
+
   //HACEMOS CASOS PARA GUARDAR VARIABLES 
   if (s1_r <= v) 
   {
@@ -128,7 +128,6 @@ void loop() {
   {
     s2=1;
   }
-
   if (s3_r <= v)
   {
     s3 = 0;
